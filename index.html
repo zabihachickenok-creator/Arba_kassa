@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="theme-color" content="#C62828">
+<meta name="description" content="ARBA Kassa Hisoboti - kirim va chiqim daftari">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ARBA Kassa">
+<title>ARBA Kassa Hisoboti</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ ZASTAVKA (SPLASH) ============ -->
+<div id="splash" class="splash">
+  <div class="splash-inner">
+    <div class="splash-logo-wrap">
+      <img src="icons/icon-512.png" alt="ARBA" class="splash-logo">
+    </div>
+    <div class="splash-title">ARBA</div>
+    <div class="splash-sub">KASSA</div>
+  </div>
+  <div class="splash-bottom">
+    <div class="spinner"></div>
+    <div class="splash-loading">Tizim yuklanmoqda...</div>
+  </div>
+</div>
+
+<!-- ============ ILOVA ============ -->
+<div id="app" class="app hidden">
+
+  <header class="appbar">
+    <div class="appbar-top">
+      <div class="brand">
+        <img src="icons/icon-192.png" alt="ARBA" class="brand-logo">
+        <span class="brand-name">ARBA KASSA</span>
+      </div>
+      <div class="appbar-actions">
+        <button id="exportBtn" class="icon-btn" title="Excelga yuklash" aria-label="Excelga yuklash">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+        </button>
+        <button id="dateBtn" class="date-btn" title="Sanani tanlash">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span id="dateLabel">—</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <input type="date" id="dateInput" class="visually-hidden" tabindex="-1">
+      </div>
+    </div>
+    <nav id="tabs" class="tabs"></nav>
+  </header>
+
+  <main id="view" class="view"></main>
+
+  <div id="bottomBar" class="bottom-bar"></div>
+</div>
+
+<div id="modalRoot"></div>
+<div id="toast" class="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
